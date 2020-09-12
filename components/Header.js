@@ -11,4 +11,10 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {}
+function Header() {
+    let headDiv = document.createElement("div")
+    headDiv.classList.add("header")
+    let headSpan = document.createElement("span")
+    headSpan.classList.add("date")
+}
+ 
