@@ -28,23 +28,13 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
-The Dom is an API for HTML and XML documents. It defines the way that information is accessed and manipulated.
-
 2. What is an event?
-
-An event is any type of interaction with a user and the program.
 
 3. What is an event listener?
 
-An event listener is a function that waits for a specific event in order to execute its given function.
-
 4. Why would we convert a NodeList into an Array?
 
-Converting a NodeList into an Array would allow us to access the Array commands such as .map, .slice etc.
-
 5. What is a component?
-
-A component is a reusable set of logic that allows you to create elements.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
