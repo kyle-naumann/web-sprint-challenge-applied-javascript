@@ -53,7 +53,6 @@ function TheCards (object){
     
     const cardsContainer = document.querySelector(".cards-container");
     
-    
     axios.get('https://lambda-times-api.herokuapp.com/articles')
         .then(response =>  {
             const topics = Object.entries(response.data.articles);
