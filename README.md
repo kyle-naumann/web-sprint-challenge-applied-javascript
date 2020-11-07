@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM is where everything comes together from all of the different file types to create the final product once everything is put together.The visual representation of the DOM can be accessed throught the inspect tool.
+
 2. What is an event?
+
+An event is an interaction that a user makes with a program. This can happen physically, or digitally.
 
 3. What is an event listener?
 
+An event listener is a function attached to an element that waits for a specific even to take place in order to run the function.
+
 4. Why would we convert a NodeList into an Array?
 
+There are Array commands that can be very helpful when dealing with a list of items that can't used with a NodeList. Things like .slice, .filter, .map are a few examples.
+
 5. What is a component?
+
+A component allows you to create elements, and is often reusable.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
