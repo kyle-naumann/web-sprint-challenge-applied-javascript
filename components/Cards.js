@@ -27,7 +27,7 @@ function TheCards (object){
         mainDiv.classList.add('card');
     
     let headlineDiv = document.createElement('div');
-        headlineDiv.classList.add('card');
+        headlineDiv.classList.add('headline');
         headlineDiv.textContent = object.headline
         mainDiv.append(headlineDiv);
     
@@ -35,11 +35,14 @@ function TheCards (object){
         authorDiv.classList.add('author');
         mainDiv.append(authorDiv);
     
-    let imageDiv = document.createElement('img');
+    let imageDiv = document.createElement('div');
         imageDiv.classList.add('img-container');
-        imageDiv.src = object.authorPhoto
-        mainDiv.append(imageDiv);
+        authorDiv.append(imageDiv);
     
+    let image = document.createElement('img')
+    image.src = object.authorPhoto
+    imageDiv.append(image)
+
     let authorName = document.createElement('span');
         authorName.textcontent = object.authorName
         mainDiv.append(authorName);
