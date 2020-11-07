@@ -12,23 +12,23 @@
 
 
 function tabCreator(tabTitle){
-    let newTab = document.createElement('div');
-    newTab.textContent = tabTitle;
-    newTab.classList.add("tab");
+    let tab = document.createElement('div');
+    tab.textContent = tabTitle;
+    tab.classList.add("tab");
     
     
-    return newTab;
+    return tab;
 }
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
-    .then(response =>  {
-    response.data.topics.forEach( item => {
+    .then(res =>  {
+    res.data.topics.forEach( item => {
         let aTab = tabCreator(item);
         let parent = document.querySelector(".topics")
     parent.append(tabCreator(item))
 
     });
 })
-    .catch(error => {
-    console.log("Error",error);
+    .catch(err => {
+    console.log(err, 'Error');
 });

@@ -21,43 +21,50 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
+
 function TheCards (object){
-let mainDiv = document.createElement("div");
-    mainDiv.classList.add("card");
-let headlineDiv = document.createElement("div");
-    headlineDiv.classList.add("card");
-    headlineDiv.textContent = object.headline
-    mainDiv.append(headlineDiv);
-let authDiv = document.createElement("div");
-    authDiv.classList.add("author");
-    mainDiv.append(authDiv);
-let imgDiv = document.createElement("img");
-    imgDiv.classList.add('img-container');
-    imgDiv.src = object.authorPhoto
-    mainDiv.append(imgDiv);
-let authname = document.createElement('span');
-    authname.textcontent = object.authorName
-    mainDiv.append(authname);
+    let mainDiv = document.createElement('div');
+        mainDiv.classList.add('card');
+    
+    let headlineDiv = document.createElement('div');
+        headlineDiv.classList.add('headline');
+        headlineDiv.textContent = object.headline
+        mainDiv.append(headlineDiv);
+    
+    let authorDiv = document.createElement('div');
+        authorDiv.classList.add('author');
+        mainDiv.append(authorDiv);
+    
+    let imageDiv = document.createElement('div');
+        imageDiv.classList.add('img-container');
+        authorDiv.append(imageDiv);
+    
+    let image = document.createElement('img')
+    image.src = object.authorPhoto
+    imageDiv.append(image)
 
-mainDiv.addEventListener('click', () => {
-    console.log(headline)
-})  
-
-return mainDiv
-}
-
-const cardsContainer = document.querySelector(".cards-container");
-
-
-axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then(response =>  {
-        const topics = Object.entries(response.data.articles);
-            topics.forEach(subject => {
-                subject[1].forEach(data => {
-                const articleCard = TheCards(data);
-                cardsContainer.append(articleCard);
+    let authorName = document.createElement('span');
+        authorName.textcontent = object.authorName
+        mainDiv.append(authorName);
+    
+    mainDiv.addEventListener('click', () => {
+        console.log(object.headline)
+    })  
+    
+    return mainDiv
+    }
+    
+    const cardsContainer = document.querySelector(".cards-container");
+    
+    axios.get('https://lambda-times-api.herokuapp.com/articles')
+        .then(response =>  {
+            const topics = Object.entries(response.data.articles);
+                topics.forEach(subject => {
+                    subject[1].forEach(data => {
+                    const articleCard = TheCards(data);
+                    cardsContainer.append(articleCard);
+                })
             })
         })
-    })
-    .catch(error => {
-        console.log(error, "Error received")})
+        .catch(error => {
+            console.log(error, "Something Went Wrong!")})
